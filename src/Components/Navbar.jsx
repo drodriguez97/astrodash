@@ -3,13 +3,13 @@ export default function Navbar(){
         <nav className="navbar">
             <ul>
                 <li>
-                    <h3>🏠 Dashboard</h3>
+                    <h3>🏠Dashboard</h3>
                 </li>
                 <li>
-                    <h3>🔎 Search</h3>
+                    <h3>🔎Search</h3>
                 </li>
                 <li>
-                    <h3>ℹ️ About</h3>
+                    <h3>💡About</h3>
                 </li>
             </ul>
         </nav>

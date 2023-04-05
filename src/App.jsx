@@ -4,10 +4,13 @@ import Navbar from './Components/Navbar';
 import Card from './Components/Card';
 import './App.css'
 import List from './Components/List';
+import HighLowGraph from './Components/HighLowGraph';
+import CloudGraph from './Components/CloudGraph';
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
-  const [currWeather, setCurrWeather] = useState({})
+  const [currWeather, setCurrWeather] = useState({});
+  const [pastWeather, setPastWeather] = useState([{}]);
   const  [inputs, setInputs] = useState({
     startDate: "2023-03-15",
     endDate: "2023-03-24",
@@ -32,16 +35,9 @@ function App() {
     }))
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setRenderInputData(true);
-  }
   return (
     <div className="App">
-      <div className='navigation-bar'>
-        <Header />
-        <Navbar />
-      </div>
+      
       <div className='main'>
         <div className='feature-cards'>
           <Card 
@@ -53,7 +49,7 @@ function App() {
             title={"☁️" +currWeather.clouds + "%"}
           />
           <Card 
-            descr={currWeather.sunrise + " AM"}
+            descr={currWeather.sunrise}
             title="sunrise"
           />
         </div>
@@ -100,9 +96,21 @@ function App() {
 
           <List 
             inputs={inputs}
+            pastWeather={pastWeather}
+            setPastWeather={setPastWeather}
           />
         </div>
+        <div className='graph'>
+            <h2>High/Low</h2>
+            <HighLowGraph 
+            pastWeather={pastWeather}/>
+
+            <h2>Cloud Coverage</h2>
+            <CloudGraph 
+            pastWeather={pastWeather}/>
+        </div>
       </div>
+      
     </div>
   )
 }

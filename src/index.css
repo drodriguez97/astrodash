@@ -1,9 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+}
+h1,h2,h3,h4,h5,h6 {
   color: white;
 }
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #191919;
@@ -13,11 +14,25 @@ html {
   height: 100vh;
 }
 
-.App {
+.layout {
   display: flex;
   height: 100%;
 }
 
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#e9e8f7;
+}
 
 

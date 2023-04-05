@@ -1,7 +1,7 @@
 export default function Header(){
     return (
         <div className="header">
-            <h2>🌞 WeatherDash</h2>
+            <h2> WeatherBoard</h2>
         </div>
     )
 }
